@@ -1,4 +1,4 @@
-http:
+https:
   port: ${PORT:-8080}
 admin:
   port: 9876
@@ -12,7 +12,7 @@ apiEndpoints:
     paths: ["/auth/", "/auth/*"]
   users:
     methods: "GET,POST,PUT,PATCH,DELETE"
-    host: ${LOCAL_IP:-localhost}
+    host: 'https://apimoba.herokuapp.com'
     paths: ["/users", "/users/*"]
   account:
     host: ${LOCAL_IP:-localhost}
@@ -39,7 +39,7 @@ apiEndpoints:
 ##################################################################################################
 serviceEndpoints:
   usersService:
-    url: "http://${LOCAL_IP:-localhost}:8000"
+    url: 'https://apimoba.herokuapp.com'
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
@@ -76,7 +76,7 @@ pipelines:
     policies:
       - log:
           - action:
-              message: "local_ip ===> ${LOCAL_IP:-localhost}"
+              message: "ENTRO A USER PIPELINE"
       # - jwt:
       #   - action:
       #       secretOrPublicKey: 'mobaAuth'
