@@ -8,13 +8,9 @@ import { Provider } from "react-redux";
 import { reduxStore, persistedStore } from "./redux/store";
 import { PersistGate } from "redux-persist/es/integration/react";
 import { LogBox } from "react-native";
-import dotenv from "dotenv";
 
 export default function App() {
   const Drawer = createDrawerNavigator();
-dotenv.config();
-
-  console.log('ENVVV', process.env);
   //LogBox.ignoreAllLogs();
   return (
     <Provider store={reduxStore}>
