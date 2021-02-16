@@ -13,7 +13,7 @@ apiEndpoints:
   users:
     methods: "GET,POST,PUT,PATCH,DELETE"
     host: 'apimoba.herokuapp.com'
-    paths: ["/users", "/users/*"]
+    paths: ["/ip", "/users/*"]
   account:
     host: ${LOCAL_IP:-localhost}
     paths: ["/accounts", "/accounts/*"]
