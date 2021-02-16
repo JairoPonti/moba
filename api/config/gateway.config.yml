@@ -73,6 +73,23 @@ policies:
   - jwt
   - request-transformer
 pipelines:
+    ##################################################################################################
+  apiPipeline:
+    apiEndpoints:
+      - api
+    policies:
+      - log:
+          - action:
+              message: "local_ip ===> ${LOCAL_IP:-localhost}"
+      # - jwt:
+      #   - action:
+      #       secretOrPublicKey: 'mobaAuth'
+      #       checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: apiService
+              changeOrigin: true
+
   ##################################################################################################
   usersPipeline:
     apiEndpoints:
