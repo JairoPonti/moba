@@ -1,5 +1,5 @@
 http:
-  port: ${PORT}
+  port: ${PORT:-8080}
 admin:
   port: 9876
   host: ${LOCAL_IP:-localhost}
@@ -12,7 +12,7 @@ apiEndpoints:
     paths: ["/auth/", "/auth/*"]
   users:
     methods: "GET,POST,PUT,PATCH,DELETE"
-    host: 'https://apimoba.herokuapp.com/'
+    host: ${LOCAL_IP:-localhost}
     paths: ["/users", "/users/*"]
   account:
     host: ${LOCAL_IP:-localhost}
@@ -39,7 +39,7 @@ apiEndpoints:
 ##################################################################################################
 serviceEndpoints:
   usersService:
-    url: 'https://apimoba.herokuapp.com:8000'
+    url: "http://${LOCAL_IP:-localhost}:8000"
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
