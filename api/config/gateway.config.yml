@@ -1,8 +1,6 @@
 http:
   port: ${PORT:-8080}
-admin:
-  port: 9876
-  host: ${LOCAL_IP:-localhost}
+  host: ${HOST:-localhost} 
 ##################################################################################################
 apiEndpoints:
   api:
@@ -12,7 +10,7 @@ apiEndpoints:
     paths: ["/auth/", "/auth/*"]
   users:
     methods: "GET,POST,PUT,PATCH,DELETE"
-    host: ${LOCAL_IP:-localhost}
+    host: ${HOST}
     paths: ["/users", "/users/*"]
   account:
     host: ${LOCAL_IP:-localhost}
@@ -39,7 +37,7 @@ apiEndpoints:
 ##################################################################################################
 serviceEndpoints:
   usersService:
-    url: "http://${LOCAL_IP:-localhost}:8000"
+    url: "http://${HOST}:8000"
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
