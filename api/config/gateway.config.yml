@@ -41,7 +41,7 @@ serviceEndpoints:
   apiService:
     url: 'https://httpbin.org'
   usersService:
-    url: "http://${LOCAL_IP:-localhost}:8000"
+    url: "http://54.165.4.32:8000"
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
