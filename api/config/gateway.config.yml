@@ -1,4 +1,4 @@
-https:
+http:
   port: ${PORT:-8080}
 admin:
   port: 9876
