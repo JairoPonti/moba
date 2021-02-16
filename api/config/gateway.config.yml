@@ -2,17 +2,14 @@ http:
   port: ${PORT:-8080}
 admin:
   port: 9876
-  host: ${LOCAL_IP:-localhost}
 ##################################################################################################
 apiEndpoints:
   api:
-    host: '${LOCAL_IP:-localhost}'
-    paths: "/ip"
+    paths: ["/ip", "/ip/*"]
   auth:
     paths: ["/auth/", "/auth/*"]
   users:
     methods: "GET,POST,PUT,PATCH,DELETE"
-    host: 'http://apimoba.herokuapp.com'
     paths: ["/users", "/users/*"]
   account:
     host: ${LOCAL_IP:-localhost}
@@ -35,11 +32,14 @@ apiEndpoints:
   whatsapp:
     host: ${LOCAL_IP:-localhost}
     paths: ["/whatsapp", "/whatsapp/*"]
+  interoperabilities:
+    host: ${LOCAL_IP:-localhost}
+    paths: ["/interoperabilities", "/interoperabilities/*"]
 
 ##################################################################################################
 serviceEndpoints:
   usersService:
-    url: "http://10.0.0.10:8000"
+    url: "http://${LOCAL_IP:-localhost}:8000"
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
@@ -56,6 +56,8 @@ serviceEndpoints:
     url: "http://${LOCAL_IP:-localhost}:8008"
   whatsappService:
     url: "http://${LOCAL_IP:-localhost}:8007"
+  interoperabilitiesService:
+    url: "http://${LOCAL_IP:-localhost}:8009"
 ##################################################################################################
 policies:
   - basic-auth
@@ -189,4 +191,17 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: statisticsService
+              changeOrigin: true
+##################################################################################################
+  interoperabilitiesPipeline:
+    apiEndpoints:
+      - interoperabilities
+    policies:
+      - log:
+          - action:
+              message: "local_ip ===> ${LOCAL_IP:-localhost}"
+      - proxy:
+          - action:
+              serviceEndpoint: interoperabilitiesService
+              stripPath: true
               changeOrigin: true
