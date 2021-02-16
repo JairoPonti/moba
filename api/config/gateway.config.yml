@@ -39,7 +39,7 @@ apiEndpoints:
 ##################################################################################################
 serviceEndpoints:
   usersService:
-    url: 'https://apimoba.herokuapp.com'
+    url: 'https://httpbin.org/ip'
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
