@@ -38,6 +38,8 @@ apiEndpoints:
 
 ##################################################################################################
 serviceEndpoints:
+  apiService:
+    url: 'https://httpbin.org'
   usersService:
     url: "http://${LOCAL_IP:-localhost}:8000"
   transactionService:
