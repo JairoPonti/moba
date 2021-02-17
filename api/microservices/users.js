@@ -99,7 +99,7 @@ server.post("/users/logout", (req, res) => {
   });
 });
 
-server.listen('http://apimoba.herokuapp.com/', () => {
+server.listen(8000, () => {
   console.log("Users microservice running on 8000");
 });
 

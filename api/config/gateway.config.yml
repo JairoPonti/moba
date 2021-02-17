@@ -41,7 +41,7 @@ serviceEndpoints:
   apiService:
     url: 'https://httpbin.org'
   usersService:
-    url: "http://apimoba.herokuapp.com:8000"
+    url: "http://${LOCAL_IP:-localhost}:8000"
   transactionService:
     url: "http://${LOCAL_IP:-localhost}:8001"
   authService:
@@ -102,6 +102,12 @@ pipelines:
       #   - action:
       #       secretOrPublicKey: 'mobaAuth'
       #       checkCredentialExistence: false
+      - cors:
+            -
+              action:
+                origin: 'http://apimoba.herokuapp.com'
+                methods: 'HEAD,PUT,PATCH,POST,DELETE'
+                allowedHeaders: 'X-TEST'
       - proxy:
           - action:
               serviceEndpoint: usersService
