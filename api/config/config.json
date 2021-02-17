@@ -8,10 +8,10 @@
     "dialect": "postgres"
   }, 
   "test": {
-    "username": "postgres",
-    "password": "1234",
-    "database": "mobadb",
-    "host": "127.0.0.1",
+    "username": "ilyytncfpiravk",
+    "password": "748d6f0f10957190ca357f825f3088ec6ce573ea1c090d17f8cb75958d385748",
+    "database": "datf9hse5sm857",
+    "host": "ec2-3-213-85-90.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "production": {
