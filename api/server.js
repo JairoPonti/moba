@@ -14,7 +14,7 @@ const server = require('./microservices/auth.js');
 // require("./microservices/whatsapp.js");
 // require("./microservices/interoperabilities.js");
 
-conn.sync({ force: false })
+conn.sync({ force: true })
 .then(() => {
   server.listen(process.env.PORT || 8000, () => {
     console.log(`auth microservice running on ${process.env.PORT || 8000}`);
