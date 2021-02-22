@@ -163,8 +163,4 @@ server.delete("/delete/:alias", (req, res) => {
 });
 
 
-server.listen(8006, () => {
-  console.log("Contacts microservice running on 8006");
-});
-
 module.exports = server;
