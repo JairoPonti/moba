@@ -101,8 +101,6 @@ server.post("/users/logout", (req, res) => {
   });
 });
 
-server.listen(process.env.PORT || 8000, () => {
-  console.log(`Users microservice running on ${process.env.PORT || 8000}`);
-});
+
 
 module.exports = server;
