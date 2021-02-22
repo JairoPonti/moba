@@ -293,8 +293,5 @@ server.get("/statistics/lineal/:cvu/:dateFrom/:dateTo", (req, res) => {
     });
 });
 
-server.listen(8008, () => {
-  console.log("statistics microservice running on 8008");
-});
 
 module.exports = server;
