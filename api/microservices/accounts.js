@@ -180,8 +180,5 @@ server.put("/accounts/updatecard/:cvu", (req, res) => {
 
 
 
-server.listen(8004, () => {
-  console.log("Server running on 8004");
-});
 
 module.exports = server;
