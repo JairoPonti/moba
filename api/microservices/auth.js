@@ -202,8 +202,5 @@ server.post("/auth/login", (req, res, next) => {
   })(req, res, next);
 });
 
-server.listen(8002, () => {
-  console.log("Auth microservice running on 8002");
-});
 
 module.exports = server;
