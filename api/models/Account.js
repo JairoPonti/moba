@@ -35,9 +35,9 @@ module.exports = (sequelize) => {
     rechargeCode:{
         type: DataTypes.STRING
     },
-    UserId:{
+    userId:{
       type: DataTypes.INTEGER
-      
+
     }
 
 
