@@ -462,8 +462,6 @@ server.post("/send-email-reciever", (req, res) => {
   send();
 })
 
-server.listen(8005, () => {
-  console.log("Server running on 8005");
-});
+
 
 module.exports = server;
