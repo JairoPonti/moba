@@ -536,8 +536,4 @@ server.get("/transaction/receipt/:cvu/:number", Verifytoken, (req, res, next) =>
 })
 
 
-server.listen(8001, () => {
-  console.log("Transaction running on 8001");
-});
-
 module.exports = server;
