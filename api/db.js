@@ -77,7 +77,7 @@ const {
 
 User.hasOne(Account);
 
-Account.belongsTo(User);
+Account.belongsTo(User, {foreignKey: "userId"});
 
 //Account - Transaccion mxm
 
