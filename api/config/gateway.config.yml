@@ -13,25 +13,18 @@ apiEndpoints:
     methods: "GET,POST,PUT,PATCH,DELETE"
     paths: ["/users", "/users/*"]
   account:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/accounts", "/accounts/*"]
   admin:
-    host: ${LOCAL_IP:-localhost}
     paths: "/admin/*"
   transaction:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/transaction", "/transaction/*"]
   email:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/email", "/email/*"]
   contact:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/contacts", "/contacts/*"]
   statistics:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/statistics", "/statistics/*"]
   whatsapp:
-    host: ${LOCAL_IP:-localhost}
     paths: ["/whatsapp", "/whatsapp/*"]
   interoperabilities:
     host: ${LOCAL_IP:-localhost}
@@ -44,19 +37,19 @@ serviceEndpoints:
   usersService:
     url: "https://usersmoba.herokuapp.com/"
   transactionService:
-    url: "http://${LOCAL_IP:-localhost}:8001"
+    url: "https://transactionsmoba.herokuapp.com/"
   authService:
-    url: "http://${LOCAL_IP:-localhost}:8002"
+    url: "https://authmoba.herokuapp.com/"
   accountService:
-    url: "http://${LOCAL_IP:-localhost}:8004"
+    url: "https://accountsmoba.herokuapp.com/"
   adminService:
     url: "http://${LOCAL_IP:-localhost}:8003"
   emailService:
-    url: "http://${LOCAL_IP:-localhost}:8005"
+    url: "https://emailsmoba.herokuapp.com/"
   contactService:
-    url: "http://${LOCAL_IP:-localhost}:8006"
+    url: "https://contactsmoba.herokuapp.com/"
   statisticsService:
-    url: "http://${LOCAL_IP:-localhost}:8008"
+    url: "https://statsmoba.herokuapp.com/"
   whatsappService:
     url: "http://${LOCAL_IP:-localhost}:8007"
   interoperabilitiesService:
