@@ -34,6 +34,10 @@ module.exports = (sequelize) => {
     },
     rechargeCode:{
         type: DataTypes.STRING
+    },
+    UserId:{
+      type: DataTypes.INTEGER
+      
     }
 
 
